@@ -47,6 +47,14 @@ class ServantsListFragment : Fragment() {
         return view
     }
 
+    override fun onStart() {
+        super.onStart()
+    }
+
+    override fun onStop() {
+        super.onStop()
+    }
+
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
