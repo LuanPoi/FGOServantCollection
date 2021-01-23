@@ -7,12 +7,17 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.example.fgoservantcollection.R
-import kotlinx.android.synthetic.main.fragment_entry.*
+import com.example.fgoservantcollection.databinding.FragmentEntryBinding
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
 private const val ARG_PARAM1 = "param1"
 private const val ARG_PARAM2 = "param2"
+
+private var _binding: FragmentEntryBinding? = null
+// This property is only valid between onCreateView and
+// onDestroyView.
+private val binding get() = _binding!!
 
 /**
  * A simple [Fragment] subclass.
@@ -33,19 +38,27 @@ class EntryFragment : Fragment() {
     }
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
+        inflater: LayoutInflater,
+        container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_entry, container, false)
+        _binding = FragmentEntryBinding.inflate(inflater, container, false)
+        val view = binding.root
+        return view
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState);
 
-        button.setOnClickListener{
+        binding.button.setOnClickListener{
             findNavController().navigate(R.id.action_entryFragment_to_servantsListFragment)
         }
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 
     companion object {
