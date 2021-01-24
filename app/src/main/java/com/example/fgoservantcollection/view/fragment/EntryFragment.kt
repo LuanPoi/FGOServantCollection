@@ -8,6 +8,8 @@ import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.example.fgoservantcollection.R
 import com.example.fgoservantcollection.databinding.FragmentEntryBinding
+import com.google.android.gms.ads.AdRequest
+import com.google.android.gms.ads.AdView
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -54,6 +56,10 @@ class EntryFragment : Fragment() {
         binding.button.setOnClickListener{
             findNavController().navigate(R.id.action_entryFragment_to_servantsListFragment)
         }
+
+        var mAdView: AdView = binding.adView
+        val adRequest = AdRequest.Builder().build()
+        mAdView.loadAd(adRequest)
     }
 
     override fun onStart() {
