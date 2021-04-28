@@ -6,7 +6,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.fgoservantcollection.R
-import com.example.fgoservantcollection.databinding.FragmentEntryBinding
 import com.example.fgoservantcollection.databinding.FragmentServantsListBinding
 
 // TODO: Rename parameter arguments, choose names that match
@@ -44,7 +43,12 @@ class ServantsListFragment : Fragment() {
         // Inflate the layout for this fragment
         _binding = FragmentServantsListBinding.inflate(inflater, container, false)
         val view = binding.root
+
         return view
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
     }
 
     override fun onStart() {

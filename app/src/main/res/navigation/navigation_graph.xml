@@ -3,20 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/navigation_graph"
-    app:startDestination="@id/entryFragment">
-    <fragment
-        android:id="@+id/entryFragment"
-        android:name="com.example.fgoservantcollection.view.fragment.EntryFragment"
-        android:label="fragment_entry"
-        tools:layout="@layout/fragment_entry">
-        <action
-            android:id="@+id/action_entryFragment_to_servantsListFragment"
-            app:destination="@id/servantsListFragment"
-            app:enterAnim="@anim/fragment_open_enter"
-            app:exitAnim="@anim/fragment_open_exit"
-            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
-            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
-    </fragment>
+    app:startDestination="@id/servantsListFragment">
     <fragment
         android:id="@+id/servantsListFragment"
         android:name="com.example.fgoservantcollection.view.fragment.ServantsListFragment"

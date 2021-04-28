@@ -6,15 +6,54 @@
     android:layout_height="match_parent"
     tools:context=".view.MainActivity">
 
-    <fragment
-        android:id="@+id/fragment"
-        android:name="androidx.navigation.fragment.NavHostFragment"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:defaultNavHost="true"
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/backgroud_gradient" />
+
+    <fragment
+        android:id="@+id/topFragment"
+        android:name="com.example.fgoservantcollection.view.fragment.AdMobFragment"
+        class="com.example.fgoservantcollection.view.fragment.AdMobFragment"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout="@layout/fragment_ad_mob" />
+
+    <fragment
+        android:id="@+id/middleFragment"
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        app:defaultNavHost="true"
+        app:layout_constraintBottom_toTopOf="@+id/bottomFragment"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/topFragment"
         app:navGraph="@navigation/navigation_graph" />
+
+    <fragment
+        android:id="@+id/bottomFragment"
+        android:name="com.example.fgoservantcollection.view.fragment.BottomMenuFragment"
+        class="com.example.fgoservantcollection.view.fragment.BottomMenuFragment"
+        tools:layout="@layout/fragment_bottom_menu"
+        android:layout_width="0dp"
+        android:layout_height="78.54dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
